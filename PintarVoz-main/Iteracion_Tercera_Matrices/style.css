@@ -1,0 +1,33 @@
+body {
+  margin: 0px;
+  padding:0px;
+  overflow: hidden; /* Evita barras de desplazamiento innecesarias */
+}
+
+canvas {
+  display: block; /* Elimina un pequeño espacio en blanco debajo del canvas */
+}
+
+/* --- PANTALLA DE INICIO (TEXTO CLICK PARA COMENZAR) --- */
+#pantalla-inicio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(9, 23, 57); 
+  color: rgb(255, 255, 255);            
+  display: flex;
+justify-content: center;
+align-items: center;
+  z-index: 10; /* Asegura que la pantalla gris quede por encima del canvas de p5 */
+  cursor: pointer; 
+  
+}
+
+#pantalla-inicio p {
+  font-size: 40px;
+  font-family: sans-serif;
+  margin: 10;
+  text-align: center;
+}
