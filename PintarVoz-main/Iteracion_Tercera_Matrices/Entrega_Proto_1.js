@@ -103,6 +103,7 @@ let brillo = 0;
 let umbralRuidoPruebaEnFrec = 0.1;  //mismos valores que para amp e intensidad
 let umbralDuracionSonidoFrec = 2000;          //mismos valores que para amp e intensidad
 
+let teclaTBloqueada = false; // function keyPressed
 
 function preload() {
   datosHSB = loadJSON("paletaColoresHSB_E1_E2_E3_bordes.json"); //{}
@@ -410,22 +411,23 @@ async function iniciarAudio() {
 }
 
 function keyPressed() {
-  // Cambio manual con la tecla 'w' o 'W'
   if (key === 'w' || key === 'W') {
     indiceObra = (indiceObra + 1) % dibujos.length;
     console.log("Cambiando a obra: " + indiceObra);
   }
-  
-  // (Si tenías lo de la tecla 'm' o 'b' antes, podés dejarlo abajo)
+
+  if ((key === 't' || key === 'T') && !teclaTBloqueada) {
+    teclaTBloqueada = true;
+    let panel = document.getElementById('panel-ajustes');
+    if (panel) {
+      panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
+    }
+  }
 }
 
 function keyReleased() {
-  if (key === 'b' || key === 'B') {
-    if (pantalla === 0) {
-      pantalla = 1;
-    } else if (pantalla === 1) {
-      pantalla = 0;
-    }
+  if (key === 't' || key === 'T') {
+    teclaTBloqueada = false;
   }
 }
 function mousePressed() {
