@@ -3,6 +3,7 @@
 let bolsaCurvas1 = []; // y
 
 //cambiso 27/03/2026
+//NUEVO CAMBIO: ahora la clase Curvas_1 tiene un metodo que reordena las curvas de manera aleatoria, y se llama desde el main.js cuando se detecta un sonido corto. Esto reemplaza la logica anterior que estaba comentada en el metodo dibujar de la clase Curvas_1.
 
 // --- CLASES CONTENEDORAS ---
 // --- CLASES CONTENEDORAS ---
